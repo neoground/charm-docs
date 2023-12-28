@@ -51,4 +51,5 @@ For more information, please refer to the LICENSE file in this repository.
 
 ---
 
-May the Force guide you through the Charm Framework documentation. Your journey to mastering this framework begins here!
+May the Force guide you through the Charm Framework documentation.
+Your journey to mastering this framework begins here!
