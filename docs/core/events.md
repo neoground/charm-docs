@@ -77,7 +77,7 @@ C::Event()->fire('App', 'DemoEvent');
 
 Creating your event is akin to crafting a star, a beacon in the code space. To birth a new event, employ your module name and a unique event name, like so:
 ```php
-C::Event()->fire('MyModuleName', 'sampleEvent');
+C::Event()->fire('MyModuleName', 'sampleEvent', ['location' => 'earth']);
 ```
 
 And as celestial bodies heed the call of a new star, so do event listeners respond to
@@ -101,9 +101,15 @@ class RenderEvent extends EventListener
         $this->fireOnEvent("MyModuleName", "sampleEvent");
     }
 
-    public function fire()
+    public function fire(mixed $args): bool
     {
         // Engage in your celestial dance here.
+        if(is_array($args) && $args['location'] != 'earth') {
+            // You're firing from the wrong planet
+            return false;
+        }
+        
+        return true;
     }
 }
 ```
